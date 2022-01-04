@@ -16,5 +16,35 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCustomer_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CustomerGUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
