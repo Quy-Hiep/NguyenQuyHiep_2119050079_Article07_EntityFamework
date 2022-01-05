@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class AreaDAL:DBConnection
+    public class Area_DAL:DBConnection
     {
         public List<Area_DTO> ReadArea()
         {
