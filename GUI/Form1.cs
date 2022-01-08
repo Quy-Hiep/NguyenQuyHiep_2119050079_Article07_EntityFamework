@@ -69,23 +69,34 @@ namespace GUI
                 MessageBox.Show("Tên sinh viên không được để trống", "Cảnh Báo");
             else
             {
-                Customer_DTO cus = new Customer_DTO();
-                cus.CustomerId = tbId.Text;
-                cus.CustomerName = tbName.Text;
-                cus.Area = (Area_DTO)cbArea.SelectedItem;
+                var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa sinh viên này?",
+                                     "Cảnh Báo!!",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes) 
+                {
+                    Customer_DTO cus = new Customer_DTO();
+                    cus.CustomerId = tbId.Text;
+                    cus.CustomerName = tbName.Text;
+                    cus.Area = (Area_DTO)cbArea.SelectedItem;
 
-                cusBUS.EditCustomer(cus);
+                    cusBUS.EditCustomer(cus);
 
-                DataGridViewRow row = dgvCustomer.CurrentRow;
-                row.Cells[0].Value = cus.CustomerId;
-                row.Cells[1].Value = cus.CustomerName;
-                row.Cells[2].Value = cus.Area.AreaName;
+                    DataGridViewRow row = dgvCustomer.CurrentRow;
+                    row.Cells[0].Value = cus.CustomerId;
+                    row.Cells[1].Value = cus.CustomerName;
+                    row.Cells[2].Value = cus.Area.AreaName;
+                }
+                
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa sinh viên này?",
+                                        "Cảnh Báo!!",
+                                        MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+                Close();
         }
 
         private void dgvCustomer_RowEnter(object sender, DataGridViewCellEventArgs e)
