@@ -37,6 +37,7 @@ namespace GUI
                 cusBUS.NewCustomer(cus);
 
                 dgvCustomer.Rows.Add(cus.CustomerId, cus.CustomerName, cus.Area.AreaName);
+
             }
         }
 
@@ -73,7 +74,7 @@ namespace GUI
                 cus.CustomerName = tbName.Text;
                 cus.Area = (Area_DTO)cbArea.SelectedItem;
 
-                cusBUS.NewCustomer(cus);
+                cusBUS.EditCustomer(cus);
 
                 DataGridViewRow row = dgvCustomer.CurrentRow;
                 row.Cells[0].Value = cus.CustomerId;

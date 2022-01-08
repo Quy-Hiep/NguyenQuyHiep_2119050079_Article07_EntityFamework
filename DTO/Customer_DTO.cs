@@ -13,6 +13,8 @@ namespace DTO
         [Key,Column(TypeName="varchar"),MaxLength(50)]
         public string CustomerId { get; set; }
         public string CustomerName { get; set; }
+        public string AreaId { get; set; }
+
         public virtual Area_DTO Area { get; set; }
 
     }

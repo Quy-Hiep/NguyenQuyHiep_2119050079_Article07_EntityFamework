@@ -10,7 +10,7 @@ namespace DTO
 {
     public class Area_DTO
     {
-        [Key,Column(TypeName="varchar"),MaxLength(50)]
+        [Key, Column(TypeName="varchar"),MaxLength(50)]
         public string AreaId { get; set; }
         public string AreaName { get; set; }
         public virtual List<Customer_DTO> Customers { get; set; }
